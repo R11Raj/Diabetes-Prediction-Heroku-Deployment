@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href='style.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body style="font-family: 'Space Mono','Ariel','Serif';">
+ <div class="login" style="text-align:center">
+	<h1>Diabetes Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" style="padding-left:35%">
+    <table>
+        
+        <tr>
+    	<td>
+    	Pregnancies : </td><td><input type="text" name="pregnancies" placeholder="Pregnancies" required="required" />
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+        Glucose : </td><td><input type="text" name="glucose" placeholder="Glucose" required="required" />
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		Blood Pressure : </td><td><input type="text" name="bloodpressure" placeholder="Blood Pressure" required="required" />
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		Skin Thickness : </td><td><input type="text" name="skinthickness" placeholder="Skin Thickness" required="required" />
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		Insulin : </td><td><input type="text" name="insulin" placeholder="Insulin" required="required" />
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		Body Mass Index : </td><td><input type="text" name="bmi" placeholder="BMI" required="required" />
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		Diabetes Pedigree Function : </td><td><input type="text" name="diabetespedigreefunction" placeholder="Diabetes Pedigree Function" required="required" />
+		</td>
+		</tr>
+		
+		<tr>
+        <td>
+		Age : </td><td><input type="text" name="age" placeholder="age" required="required" />
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+        <button type="submit" style="width:80px;height:30px;" class="btn btn-primary btn-block btn-large">Predict</button>
+        </td>
+        </tr>
+    </table>
+    </form>
+
+   <br>
+   <br>
+   <h1>
+   {{ prediction_text }}
+   </h1>
+   <br>
+   <br>
+   <h3>
+ Designed and Developed by Raj Prajapati
+ </h3>
+ </div>
+
+
+</body>
+</html>
