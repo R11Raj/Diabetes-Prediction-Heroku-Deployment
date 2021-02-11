@@ -20,6 +20,9 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
+    f=open('test.txt','w')
+    f.write('dvsdvsvsdvsdvsdvsdv')
+    f.close()
     int_features = [x for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
