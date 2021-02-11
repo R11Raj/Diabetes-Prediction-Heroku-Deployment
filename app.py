@@ -27,10 +27,12 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
     output=''
+    f=open('test.txt','r')
+    
     if prediction:
-        output="You have Diabetes , Please Take of care of Yourself"
+        output=f.read()+"You have Diabetes , Please Take of care of Yourself"
     else:
-        output="You don't have Diabetes , Enjoy your life but don't be overconfident about your food choices"
+        output=f.read()+"You don't have Diabetes , Enjoy your life but don't be overconfident about your food choices"
 
     return render_template('index.html', prediction_text=output)
 
